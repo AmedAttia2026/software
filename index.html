@@ -9,7 +9,7 @@
     <style>
         /* Base font size for the entire document, relative to which all 'rem' units will scale */
         html {
-            font-size: 10px; /* تم تصغير الحجم بشكل إضافي */
+            font-size: 14px; /* تم زيادة الحجم حسب الطلب */
         }
 
         body {
@@ -61,9 +61,8 @@
         /* Sidebar styles */
         .sidebar {
             position: fixed;
-            top: 0;
-            left: -160px; /* تم تعديل الحجم */
-            width: 160px; /* تم تعديل الحجم */
+            left: -200px; /* تم تكبير حجم الشريط الجانبي */
+            width: 200px; /* تم تكبير حجم الشريط الجانبي */
             height: 100%;
             background-color: #f8f9fa;
             color: #3A3A3A;
@@ -72,7 +71,8 @@
             z-index: 30;
             display: flex;
             flex-direction: column;
-            padding: 0.25rem 0; /* تم تعديل المساحة */
+            padding: 0.5rem 0; /* تم تعديل المساحة */
+            top: 0;
         }
 
         .sidebar.active {
@@ -94,8 +94,8 @@
         }
 
         .sidebar-header {
-            padding: 0.5rem; /* تم تعديل المساحة */
-            font-size: 0.9rem; /* تم تعديل حجم الخط */
+            padding: 0.75rem; /* تم تعديل المساحة */
+            font-size: 1rem; /* تم تعديل حجم الخط */
             font-weight: bold;
             border-bottom: 1px solid #e0e0e0;
             margin-bottom: 0.5rem;
@@ -105,8 +105,8 @@
         .sidebar-nav-item {
             display: flex;
             align-items: center;
-            padding: 0.5rem 0.75rem; /* تم تعديل المساحة */
-            font-size: 0.75rem; /* تم تعديل حجم الخط */
+            padding: 0.75rem 1rem; /* تم تكبير المساحة */
+            font-size: 1rem; /* تم تكبير حجم الخط */
             color: #4A5568;
             transition: background-color 0.2s ease, color 0.2s ease;
             cursor: pointer;
@@ -459,77 +459,73 @@
         }
 
         /* New styles for font size buttons and toggle switch */
-/* New styles for font size buttons and toggle switch */
-.header-actions {
-    display: flex;
-    align-items: center;
-    /* تقليل المسافة بين الأزرار */
-    gap: 0.05rem; 
-}
-.font-size-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    /* تصغير الأبعاد بشكل كبير لتناسب المسافة */
-    width: 22px; 
-    height: 22px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 0;
-}
-.font-size-button:hover {
-    transform: scale(1.1);
-}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; 
+        }
+        .font-size-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem; /* تم تكبير الخط */
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 32px; /* تم تكبير الأبعاد */
+            height: 32px; /* تم تكبير الأبعاد */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0;
+            padding: 0.25rem;
+        }
+        .font-size-button:hover {
+            transform: scale(1.1);
+        }
 
-.toggle-switch {
-    position: relative;
-    display: inline-block;
-    /* تصغير الأبعاد لتناسب المسافة */
-    width: 30px; 
-    height: 18px; 
-    margin: 0;
-}
-.toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.toggle-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-.toggle-slider:before {
-    position: absolute;
-    content: "";
-    /* تصغير الدائرة الداخلية */
-    height: 14px;
-    width: 14px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-input:checked + .toggle-slider {
-    background-color: #2196F3;
-}
-input:checked + .toggle-slider:before {
-    /* تعديل مسافة التحريك */
-    transform: translateX(12px);
-}        .dark-mode .toggle-slider {
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px; /* تم تكبير الأبعاد */
+            height: 24px; /* تم تكبير الأبعاد */
+            margin: 0;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px; /* تم تكبير الدائرة الداخلية */
+            width: 20px; /* تم تكبير الدائرة الداخلية */
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(16px); /* تم تعديل مسافة التحريك */
+        }
+        .dark-mode .toggle-slider {
             background-color: #4A5568;
         }
         .dark-mode input:checked + .toggle-slider {
